@@ -93,7 +93,9 @@ jobs:
       - run: yarn install --frozen-lockfile --production=false
       - name: Setting vue version
         shell: pwsh
-        run: ./env.ps1 -set ${{ matrix.vue-version }}
+        run: |
+          ls
+          ./env.ps1 -set ${{ matrix.vue-version }}
       - name: Build library
         run: yarn build
 

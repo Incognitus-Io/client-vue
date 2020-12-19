@@ -4,8 +4,6 @@ param (
   [Int][ValidateRange(2, 3)]$set
 )
 
-Write-Host $set
-
 if ($set -eq 2 -or $set -eq 3) {
   $mode = [int]"$(yarn -s json -f .\package.json mode)"
   if ($mode -eq $set) {
