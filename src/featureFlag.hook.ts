@@ -1,5 +1,6 @@
 /* vue2-start */
 import {
+  Ref as RefV2,
   ComputedRef as CompRefV2,
   computed as computed2,
   inject as inject2,
@@ -17,8 +18,8 @@ import { incognitusSymbol } from './constants';
 
 /* vue2-start */
 export interface IncognitusHookV2 {
-  incognitus: CompRefV2<IncognitusService>;
-  isReady: CompRefV2<boolean>;
+  incognitus: IncognitusService;
+  isReady: RefV2<boolean>;
 }
 
 export const useIncognitusV2 = (): IncognitusHookV2 => {
@@ -31,7 +32,7 @@ export const useIncognitusV2 = (): IncognitusHookV2 => {
   }
 
   return {
-    incognitus: computed2(() => svcFactory()),
+    incognitus: svcFactory(),
     isReady: computed2(() => IncognitusService.isReady),
   };
 };
