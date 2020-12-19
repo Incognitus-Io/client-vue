@@ -92,8 +92,8 @@ jobs:
 
       - run: yarn install --frozen-lockfile --production=false
       - name: Setting vue version
-        shell: powershell
-        run: env.ps1 -set ${{ matrix.vue_version }}
+        shell: pwsh
+        run: ./env.ps1 -set ${{ matrix.vue-version }}
       - name: Build library
         run: yarn build
 
@@ -109,7 +109,7 @@ jobs:
 
           popd
           version="$(yarn -s json -f package.json version)-pre.${build}"
-          version="${{ matrix.vue_version }}${version:1}"
+          version="${{ matrix.vue-version }}${version:1}"
 
           echo ::set-output name=version::${version}
 
@@ -130,7 +130,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
-        run: yarn publish --access public --tag next-vue${{ matrix.vue_version }} --no-git-tag-version --new-version $PKG_VERSION
+        run: yarn publish --access public --tag next-vue${{ matrix.vue-version }} --no-git-tag-version --new-version $PKG_VERSION
 
   deploy-latest:
     runs-on: ubuntu-18.04
