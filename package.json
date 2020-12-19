@@ -41,9 +41,10 @@
     "env:switch": "pwsh ./env.ps1 -switch",
     "env:save": "pwsh ./env.ps1 -save"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@incognitus/client-web-core": "next"
+  },
   "devDependencies": {
-    "@incognitus/client-web-core": "^1.0.1-pre.1",
     "@rollup/plugin-eslint": "^8.0.1",
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
@@ -71,17 +72,14 @@
     "vue-template-compiler": "^2.6.12"
   },
   "peerDependencies2": {
-    "@incognitus/client-web-core": "^1.0.0",
     "@vue/composition-api": "^1.0.0-0",
     "vue": "^2.0.0"
   },
   "peerDependencies3": {
-    "@incognitus/client-web-core": "^1.0.0",
     "@vue/runtime-core": "^3.0.0"
   },
   "mode": 2,
   "peerDependencies": {
-    "@incognitus/client-web-core": "^1.0.0",
     "@vue/composition-api": "^1.0.0-0",
     "vue": "^2.0.0"
   }

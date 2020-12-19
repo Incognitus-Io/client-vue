@@ -313,7 +313,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@incognitus/client-web-core@^1.0.1-pre.1":
+"@incognitus/client-web-core@next":
   version "1.0.1-pre.1"
   resolved "https://registry.yarnpkg.com/@incognitus/client-web-core/-/client-web-core-1.0.1-pre.1.tgz#5da39b3653c916099a1701ca3f31c782439ab2ea"
   integrity sha512-yGyf9kXxGzA7ugKArDPmMK1sJc80y6cRlzij6jkdScVZR9qaEnQN7/OJh2KRKup4/8CH/knqmNOugQdexcKD7g==
