@@ -1,12 +1,14 @@
+import { IncognitusService } from '@incognitus/client-web-core';
+
 import {
   DirectiveOptions,
   DirectiveBinding as DirectiveBinding2,
 } from 'vue/types/options';
+
 import {
   Directive,
   DirectiveBinding as DirectiveBinding3,
 } from '@vue/runtime-core';
-import { IncognitusService } from '@incognitus/client-web-core';
 
 const checkFlag = async (
   flagName: string,
@@ -40,10 +42,14 @@ const directive = async (
   }
 };
 
-export const FeatureFlagDirective3: Directive<HTMLElement> = {
-  beforeMount: directive,
-};
-
+/* vue2-start */
 export const FeatureFlagDirective2: DirectiveOptions = {
   bind: directive,
 };
+/* vue2-end */
+
+/* vue3-start */
+export const FeatureFlagDirective3: Directive<HTMLElement> = {
+  beforeMount: directive,
+};
+/* vue3-end */
