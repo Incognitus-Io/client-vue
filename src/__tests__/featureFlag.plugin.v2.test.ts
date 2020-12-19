@@ -7,7 +7,7 @@ import { IncognitusService } from '@incognitus/client-web-core';
 import fetchMock from 'jest-fetch-mock';
 
 import { incognitusSymbol } from '../constants';
-import { IncognitusVue2, injectIncognitus } from '../featureFlag.plugin.v2';
+import { IncognitusVue2 } from '../featureFlag.plugin.v2';
 
 interface VueInstance {
   sealedOptions: ComponentOptions<Vue>;
@@ -39,12 +39,16 @@ describe('Plugin Vue2', () => {
         template: '<div></div>',
       };
 
+      const flush = async () =>
+        new Promise<void>((resolve) => setTimeout(() => resolve(), 10));
+
       it('initializes the service', async () => {
         const vue = createLocalVue();
 
         expect(IncognitusService.isReady).toBe(false);
 
-        (await IncognitusVue2(defaultConfig)).install(vue);
+        IncognitusVue2(defaultConfig).install(vue);
+        await flush();
 
         expect(IncognitusService.isReady).toBe(true);
       });
@@ -73,14 +77,16 @@ describe('Plugin Vue2', () => {
 
   describe('injector', () => {
     it('registeres the injection symbol', async () => {
-      expect(Object.getOwnPropertySymbols(injectIncognitus)).toContain(
+      const plugin = IncognitusVue2(defaultConfig);
+      expect(Object.getOwnPropertySymbols(plugin.injector)).toContain(
         incognitusSymbol,
       );
     });
 
     it('returns the same instance as the service', async () => {
-      await IncognitusService.initialize(defaultConfig);
-      expect(injectIncognitus[incognitusSymbol]()).toEqual(
+      const plugin = IncognitusVue2(defaultConfig);
+      await plugin.initialize();
+      expect(plugin.injector[incognitusSymbol]()).toEqual(
         IncognitusService.instance,
       );
     });
