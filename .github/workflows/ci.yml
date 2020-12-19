@@ -43,9 +43,6 @@ jobs:
 
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile
-      - run: yarn lint
-        env:
-          NODE_ENV: production
       - run: yarn test:ci
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
