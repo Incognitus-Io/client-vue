@@ -1,25 +1,20 @@
-import { IncognitusConfig } from '@incognitus/client-web-core';
-export { IncognitusConfig } from '@incognitus/client-web-core';
-
-export { incognitusSymbol } from './constants';
-export { useIncognitus } from './featureFlag.hook';
-
 /* vue2-start */
-export { IncognitusPluginObject } from './featureFlag.plugin.v2';
-import { IncognitusVue2 } from './featureFlag.plugin.v2';
+import { IncognitusVue2 } from './plugins/vue2';
+export { useIncognitus } from './hooks/useIncognitus';
 /* vue2-end */
-
 /* vue3-start */
-// export {} from './featureFlag.hook';
-import { IncognitusVue3 } from './featureFlag.plugin.v3';
+import { IncognitusVue3 } from './plugins/vue3';
 /* vue3-end */
 
-export const createIncognitusClient = (options: IncognitusConfig) => {
+const getPlugin = () => {
   /* vue2-start */
-  return IncognitusVue2(options);
+  return IncognitusVue2;
   /* vue2-end */
 
   /* vue3-start */
-  return IncognitusVue3(undefined);
+  return IncognitusVue3;
   /* vue3-end */
 };
+
+export const incognitus = getPlugin();
+export default incognitus;

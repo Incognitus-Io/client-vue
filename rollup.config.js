@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
+import vue from 'rollup-plugin-vue';
 import { terser } from 'rollup-plugin-terser';
 import eslint from '@rollup/plugin-eslint';
 import stripCode from 'rollup-plugin-strip-code';
@@ -14,7 +15,7 @@ const cjsOutput = {
   file: 'lib/cjs/index.js',
   format: 'cjs',
   sourcemap: true,
-  exports: 'auto',
+  exports: 'named',
 };
 
 const vue2Stripper = {
@@ -40,6 +41,10 @@ export default {
       throwOnWarning: true,
     }),
     stripCode(+pkg.mode === 2 ? vue3Stripper : vue2Stripper),
+    stripCode({
+      start_comment: 'test-code',
+      end_comment: 'end-test-code',
+    }),
     cleanup({
       comments: 'none',
       extensions: ['js', 'jsx', 'ts', 'tsx'],
@@ -48,10 +53,13 @@ export default {
       useTsconfigDeclarationDir: true,
       tsconfig: 'tsconfig.json',
     }),
+    vue(),
   ],
   external: [
     '@incognitus/client-web-core',
     '@vue/composition-api',
     '@vue/runtime-core',
+    'vue',
+    'vue-frag',
   ],
 };

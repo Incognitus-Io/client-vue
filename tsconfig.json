@@ -18,6 +18,6 @@
     "outDir": "dist",
     "declarationDir": "types"
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/**/__tests__/*"]
+  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "exclude": ["node_modules"]
 }
