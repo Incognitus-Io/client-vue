@@ -4,18 +4,18 @@ import CompApi, {
   ComputedRef,
   defineComponent,
 } from '@vue/composition-api';
-
-import FeatureFlag from '../FeatureFlagV2.vue';
-import { useIncognitus } from '@/hooks/useIncognitus';
 import {
   IncognitusConfig,
   IncognitusService,
 } from '@incognitus/client-web-core';
 
+import FeatureFlag from '../FeatureFlag.vue';
+import { useIncognitus } from '@/hooks/useIncognitus';
+
 const localVue = createLocalVue();
 localVue.use(CompApi);
 
-jest.mock('@/hooks/useIncognitus');
+jest.mock('@/hooks/useIncognitus2');
 jest.mock('@incognitus/client-web-core');
 
 const comp = defineComponent({

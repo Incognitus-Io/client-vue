@@ -2,11 +2,7 @@ import { PluginObject } from 'vue';
 import { IncognitusConfig } from '@incognitus/client-web-core';
 
 import { initStore, initIncognitus } from '../hooks/useIncognitus';
-import FeatureFlag from '../components/FeatureFlagV2.vue';
-
-export interface IncognitusPluginObject extends PluginObject<void> {
-  initialize: () => Promise<void>;
-}
+import FeatureFlag from '../components/FeatureFlag.vue';
 
 export const IncognitusVue2: PluginObject<IncognitusConfig> = {
   install: (app, options) => {

@@ -2,7 +2,7 @@ import {
   IncognitusConfig,
   IncognitusService,
 } from '@incognitus/client-web-core';
-import { computed, Ref, ref } from '@vue/composition-api';
+import { computed, Ref, ref } from 'vue-demi';
 
 /* test-code */
 export const reset = () => {

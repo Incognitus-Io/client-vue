@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
 import vue from 'rollup-plugin-vue';
+import vue3 from 'rollup-plugin-vue3';
 import { terser } from 'rollup-plugin-terser';
 import eslint from '@rollup/plugin-eslint';
 import stripCode from 'rollup-plugin-strip-code';
@@ -53,13 +54,14 @@ export default {
       useTsconfigDeclarationDir: true,
       tsconfig: 'tsconfig.json',
     }),
-    vue(),
+    +pkg.mode === 2 ? vue() : vue3(),
   ],
   external: [
     '@incognitus/client-web-core',
     '@vue/composition-api',
     '@vue/runtime-core',
     'vue',
+    'vue-demi',
     'vue-frag',
   ],
 };

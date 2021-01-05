@@ -7,14 +7,10 @@
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  onUpdated,
-  ref,
-} from '@vue/composition-api';
+import { computed, defineComponent, onUpdated, ref } from 'vue-demi';
 import frag from 'vue-frag';
-import { useIncognitus } from '../hooks/useIncognitus';
+
+import { useIncognitus } from '@/hooks/useIncognitus';
 
 export default defineComponent({
   props: {
