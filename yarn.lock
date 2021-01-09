@@ -313,10 +313,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@incognitus/client-web-core@^1.0.1-pre.4":
-  version "1.0.1-pre.4"
-  resolved "https://registry.yarnpkg.com/@incognitus/client-web-core/-/client-web-core-1.0.1-pre.4.tgz#239eea7456f70f878fa8fdc613ba7ffe3ed3dcac"
-  integrity sha512-ffkFDVKF8ifRTLbb/AX71UAM57X6jR6v7TRVOmx7MogXXebDjUqkLcL1hwr+5iO9EFwuEstJCZm1VM6N2u+Q6g==
+"@incognitus/client-web-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@incognitus/client-web-core/-/client-web-core-1.0.1.tgz#9a9af27a0acd151796d9d45de8c880df0dfff4cd"
+  integrity sha512-3sdPuTAKFeMnxj2iaOpDnfkz3rGSru8pU9jabKvzodZEjUUxjv8yCjQECoFStIofDtk8tJoDo31S55E1JJb66A==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
