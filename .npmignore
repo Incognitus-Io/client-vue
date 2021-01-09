@@ -10,3 +10,4 @@ wercker.yml
 yarn.lock
 yarn-error.log
 .gitignore
+examples/

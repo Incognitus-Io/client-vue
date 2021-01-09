@@ -43,6 +43,7 @@ rules:
         delimiter: semi
         requireLast: false
   vue/comment-directive: off
+  vue/no-multiple-template-root: off
 overrides:
   - files:
       - "**/__tests__/*.(spec|test).{j,t}s"

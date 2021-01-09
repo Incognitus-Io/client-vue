@@ -5,12 +5,12 @@ import {
   IncognitusService,
 } from '@incognitus/client-web-core';
 
-import FeatureFlag from '../FeatureFlag.vue';
+import FeatureFlag from '../FeatureFlag.v2.vue';
 import { useIncognitus } from '@/useIncognitus';
 
 const localVue = createLocalVue();
 
-jest.mock('../useIncognitus');
+jest.mock('@/useIncognitus');
 jest.mock('@incognitus/client-web-core');
 
 const comp = defineComponent({

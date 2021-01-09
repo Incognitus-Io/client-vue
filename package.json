@@ -90,8 +90,9 @@
   "peerDependencies3": {
     "vue": "^3.0.0"
   },
-  "mode": 3,
+  "mode": 2,
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "@vue/composition-api": "^1.0.0-0",
+    "vue": "^2.0.0"
   }
 }
