@@ -13,7 +13,7 @@ import { IncognitusConfig } from '@incognitus/client-web-core';
 import FeatureFlagV2 from './components/FeatureFlag.v2.vue';
 /* vue2-end */
 /* vue3-start */
-import FeatureFlagV3 from './components/FeatureFlag.v2.vue';
+import FeatureFlagV3 from './components/FeatureFlag.v3.vue';
 /* vue3-end */
 import { initStore, initIncognitus } from './useIncognitus';
 

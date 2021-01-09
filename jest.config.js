@@ -165,9 +165,10 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    // process *.vue files with vue-jest
-    '^.+\\.vue$': require.resolve('vue-jest'),
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': require.resolve(
+    // process *.v2.vue files with vue-jest
+    '^.+\\FeatureFlag.v2.vue$': require.resolve('vue-jest'),
+    '^.+\\FeatureFlag.v3.vue$': require.resolve('jest-transform-stub'),
+    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2|)$': require.resolve(
       'jest-transform-stub',
     ),
   },
