@@ -43,6 +43,9 @@ jobs:
 
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile
+      - name: Setting vue version
+        shell: pwsh
+        run: ./env.ps1 -set 2
       - run: yarn test:ci
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
