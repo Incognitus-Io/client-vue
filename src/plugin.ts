@@ -1,10 +1,10 @@
 import { PluginObject } from 'vue';
 import { IncognitusConfig } from '@incognitus/client-web-core';
 
-import { initStore, initIncognitus } from '../hooks/useIncognitus';
-import FeatureFlag from '../components/FeatureFlag.vue';
+import { initStore, initIncognitus } from './useIncognitus';
+import FeatureFlag from './FeatureFlag.vue';
 
-export const IncognitusVue2: PluginObject<IncognitusConfig> = {
+export const IncognitusVue: PluginObject<IncognitusConfig> = {
   install: (app, options) => {
     initStore();
     initIncognitus(
@@ -17,4 +17,4 @@ export const IncognitusVue2: PluginObject<IncognitusConfig> = {
     app.component('feature-flag', FeatureFlag);
   },
 };
-export default IncognitusVue2;
+export default IncognitusVue;

@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from '@vue/test-utils';
-import CompositionApi, { defineComponent } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api';
 import fetchMock from 'jest-fetch-mock';
 import { IncognitusConfig } from '@incognitus/client-web-core';
 
@@ -11,7 +11,6 @@ import {
 } from '../useIncognitus';
 
 const localVue = createLocalVue();
-localVue.use(CompositionApi);
 
 const comp = defineComponent({
   template: `

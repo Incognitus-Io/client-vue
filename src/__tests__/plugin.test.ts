@@ -4,7 +4,7 @@ import { IncognitusConfig } from '@incognitus/client-web-core';
 import fetchMock from 'jest-fetch-mock';
 import CompApi from '@vue/composition-api';
 
-import IncognitusVue2 from '../vue2';
+import IncognitusVue2 from '../plugin';
 
 const config = Object.freeze({
   tenantId: 'abc',

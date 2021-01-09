@@ -10,7 +10,7 @@
 import { computed, defineComponent, onUpdated, ref } from 'vue-demi';
 import frag from 'vue-frag';
 
-import { useIncognitus } from '@/hooks/useIncognitus';
+import { useIncognitus } from './useIncognitus';
 
 export default defineComponent({
   props: {

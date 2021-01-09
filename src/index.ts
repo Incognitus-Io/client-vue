@@ -1,21 +1,6 @@
-/* vue2-start */
-import { IncognitusVue2 } from './plugins/vue2';
-/* vue2-end */
-/* vue3-start */
-import { IncognitusVue3 } from './plugins/vue3';
-/* vue3-end */
+import { IncognitusVue } from './plugin';
 
-export { useIncognitus } from './hooks/useIncognitus';
+export { useIncognitus } from './useIncognitus';
 
-const getPlugin = () => {
-  /* vue2-start */
-  return IncognitusVue2;
-  /* vue2-end */
-
-  /* vue3-start */
-  return IncognitusVue3;
-  /* vue3-end */
-};
-
-export const incognitus = getPlugin();
+export const incognitus = IncognitusVue;
 export default incognitus;
