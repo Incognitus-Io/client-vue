@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from '@vue/test-utils';
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue-demi';
 import fetchMock from 'jest-fetch-mock';
 import { IncognitusConfig } from '@incognitus/client-web-core';
 

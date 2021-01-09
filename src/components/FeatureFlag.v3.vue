@@ -1,3 +1,4 @@
+/* vue3-start */
 <template>
   <slot v-if="!isReady || isLoading" name="loading"></slot>
   <slot v-else-if="enabled" name="enabled"></slot>
@@ -14,3 +15,4 @@ export default defineComponent({
   setup,
 });
 </script>
+/* vue3-end */

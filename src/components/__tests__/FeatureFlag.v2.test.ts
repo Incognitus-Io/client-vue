@@ -1,5 +1,5 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
-import { computed, ComputedRef, defineComponent } from '@vue/composition-api';
+import { computed, ComputedRef, defineComponent } from 'vue-demi';
 import {
   IncognitusConfig,
   IncognitusService,

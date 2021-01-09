@@ -1,3 +1,4 @@
+/* vue2-start */
 <template>
   <div v-frag>
     <slot v-if="!isReady || isLoading" name="loading"></slot>
@@ -18,3 +19,4 @@ export default defineComponent({
   setup,
 });
 </script>
+/* vue2-end */

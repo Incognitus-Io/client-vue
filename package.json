@@ -23,8 +23,8 @@
     "vue",
     "composition-api"
   ],
-  "module": "lib/esm/index.js",
-  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.min.js",
+  "main": "lib/cjs/index.min.js",
   "types": "types/index.d.ts",
   "files": [
     "src",
