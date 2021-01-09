@@ -88,11 +88,10 @@
     "vue": "^2.0.0"
   },
   "peerDependencies3": {
-    "@vue/runtime-core": "^3.0.0"
+    "vue": "^3.0.0"
   },
-  "mode": 2,
+  "mode": 3,
   "peerDependencies": {
-    "@vue/composition-api": "^1.0.0-0",
-    "vue": "^2.0.0"
+    "vue": "^3.0.0"
   }
 }
