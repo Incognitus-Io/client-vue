@@ -19,13 +19,18 @@ import { initStore, initIncognitus } from './useIncognitus';
 
 export const IncognitusVue: PluginObject<IncognitusConfig> = {
   install: (app, options) => {
+    if (!options || !options.tenantId) {
+      console.error('You must enter your incognitus tenant id');
+      return;
+    }
+    if (!options || !options.applicationId) {
+      console.error('You must enter your incognitus application id');
+      return;
+    }
+
     initStore();
-    initIncognitus(
-      options || {
-        tenantId: '{ Insert Tenant ID }',
-        applicationId: '{ Insert Application ID }',
-      },
-    );
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    initIncognitus(options);
 
     /* vue2-start */
     if (isVue2) {

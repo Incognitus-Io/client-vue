@@ -25,6 +25,40 @@ describe('Vue 2 plugin', () => {
     }));
   });
 
+  it('writes an error when undefined options', () => {
+    const errMock = jest.spyOn(console, 'error').mockImplementation(() => {
+      /* nop */
+    });
+
+    localVue.use(IncognitusVue2, undefined);
+
+    expect(errMock).toHaveBeenCalled();
+  });
+
+  it('writes an error when tenant id is blank', () => {
+    const errMock = jest.spyOn(console, 'error').mockImplementation(() => {
+      /* nop */
+    });
+
+    localVue.use(IncognitusVue2, {
+      applicationId: 'abc',
+    });
+
+    expect(errMock).toHaveBeenCalled();
+  });
+
+  it('writes an error when app id is blank', () => {
+    const errMock = jest.spyOn(console, 'error').mockImplementation(() => {
+      /* nop */
+    });
+
+    localVue.use(IncognitusVue2, {
+      tenantId: 'abc',
+    });
+
+    expect(errMock).toHaveBeenCalled();
+  });
+
   it('initializes the service', async () => {
     localVue.use(IncognitusVue2, config);
 
@@ -34,19 +68,6 @@ describe('Vue 2 plugin', () => {
       headers: {
         'X-Application': config.applicationId,
         'X-Tenant': config.tenantId,
-      },
-    });
-  });
-
-  it('initializes with default options when none are supplied', async () => {
-    localVue.use(IncognitusVue2);
-
-    await localVue.nextTick();
-
-    expect(fetchMock).toBeCalledWith('https://incognitus.io/api/feature', {
-      headers: {
-        'X-Application': '{ Insert Application ID }',
-        'X-Tenant': '{ Insert Tenant ID }',
       },
     });
   });
