@@ -3,11 +3,31 @@
 ![Continuous Integration](https://github.com/Incognitus-Io/client-vue/workflows/Continuous%20Integration/badge.svg)
 [![codecov](https://codecov.io/gh/Incognitus-Io/client-vue/branch/master/graph/badge.svg?token=HJ4XoCv8oZ)](https://codecov.io/gh/Incognitus-Io/client-vue)
 
+## Usage
+
+Install this as your projects's dependency
+
+### Vue 2
+
+```
+npm i @incognitus/client-vue
+# or
+yarn add @incognitus/client-vue
+```
+
+### Vue 3
+
+```
+npm i @incognitus/client-vue@next
+# or
+yarn add @incognitus/client-vue@next
+```
+
 ## Installing the plugin
 
 Before you're able to use the service you'll need to install the plugin with your tenant and application IDs.
 
-### main.ts
+### main.ts - vue 2
 
 ```typescript
 import { incognitus } from '@incognitus/client-vue';
@@ -18,10 +38,23 @@ Vue.use(incognitus, {
 });
 ```
 
-| Key           | Description               |
-| ------------- | ------------------------- |
-| tenantId      | Your tenant id            |
-| applicationId | The id of the application |
+### main.ts - vue 3
+
+```typescript
+import { incognitus } from '@incognitus/client-vue';
+
+createApp(App)
+  .use(incognitus, {
+    tenantId: '{your tenant key}',
+    applicationId: '{your app id}',
+  })
+  .mount('#app');
+```
+
+| Key           | Description                               |
+| ------------- | ----------------------------------------- |
+| tenantId      | Your tenant id                            |
+| applicationId | The id of the application and environment |
 
 ## Checking features
 
